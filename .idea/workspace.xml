@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2eeef6b1-ab3c-4a32-9c43-a72a2fa1a4ab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ucr/ac/cr/repository/base_repository.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ucr/ac/cr/repository/powerbank_repository.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ucr/ac/cr/repository/prestamo_repository.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ucr/ac/cr/repository/usuario_repository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/SistemaPowerBank.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SistemaPowerBank.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ucr/ac/cr/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ucr/ac/cr/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +42,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+    "settings.editor.selected.configurable": "vcs.Git"
   }
 }]]></component>
   <component name="RunManager">
