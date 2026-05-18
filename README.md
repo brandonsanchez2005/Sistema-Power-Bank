@@ -12,45 +12,56 @@ El proyecto fue desarrollado aplicando buenas prácticas de programación, arqui
 ```plaintext
 SistemaPowerBank/
 │
+├── .venv/
+│
+├── data/
+│   ├── usuarios.json
+│   ├── powerbanks.json
+│   └── prestamos.json
+│
+├── docs/
+│   └── Entregable 1 - Adelanto.pdf
+│
 ├── src/
 │   └── ucr/
 │       └── ac/
 │           └── cr/
-│
+│               │
+│               ├── controller/
+│               │   └── sistema_controller.py
+│               │
 │               ├── model/
 │               │   ├── usuario.py
 │               │   ├── powerbank.py
 │               │   └── prestamo.py
 │               │
 │               ├── repository/
+│               │   ├── base_repository.py
 │               │   ├── usuario_repository.py
 │               │   ├── powerbank_repository.py
 │               │   └── prestamo_repository.py
 │               │
 │               ├── service/
+│               │   ├── __init__.py
 │               │   ├── usuario_service.py
-│               │   ├── prestamo_service.py
-│               │   └── login_service.py
-│               │
-│               ├── controller/
-│               │   ├── usuario_controller.py
-│               │   ├── prestamo_controller.py
-│               │   └── login_controller.py
+│               │   ├── powerbank_service.py
+│               │   └── prestamo_service.py
 │               │
 │               ├── view/
-│               │   ├── login_view.py
-│               │   ├── menu_view.py
-│               │   ├── usuario_view.py
-│               │   ├── powerbank_view.py
-│               │   ├── prestamo_view.py
-│               │   └── reporte_view.py
-│               │
-│               ├── data/
-│               │   ├── usuarios.json
-│               │   ├── powerbanks.json
-│               │   └── prestamos.json
+│               │   ├── __init__.py
+│               │   ├── ventana_admin.py
+│               │   ├── ventana_login.py
+│               │   ├── ventana_powerbank.py
+│               │   ├── ventana_prestamo.py
+│               │   ├── ventana_principal.py
+│               │   ├── ventana_reporte_prestamos.py
+│               │   ├── ventana_reportes.py
+│               │   └── ventana_usuario.py
 │               │
 │               └── main.py
+│
+├── .gitignore
+└── README.md
 ```
 <br><br>
 ## Principios SOLID Aplicados
@@ -106,5 +117,134 @@ Las capas superiores dependen de abstracciones y no directamente de implementaci
 - El controlador se comunica con los servicios.
 - Los servicios utilizan los repositorios.
 - La interfaz gráfica no depende directamente de los archivos JSON.
+<br><br>
+## Instrucciones de Uso
 
-## Instrucciones de uso
+### 1. Ejecutar el sistema
+
+Ejecutar el archivo principal del proyecto:
+
+
+python src/ucr/ac/cr/main.py
+
+
+---
+
+### 2. Inicio del sistema
+
+Al iniciar el programa, se muestra la ventana de login.
+
+Si el usuario no tiene una cuenta registrada, debe seleccionar la opción de registro.
+
+---
+
+### 3. Registro de usuarios
+
+Para registrarse, el usuario debe ingresar:
+
+- ID
+- Nombre
+- Correo
+- Teléfono
+- Contraseña
+
+Después del registro, el usuario puede iniciar sesión utilizando su correo y contraseña.
+
+---
+
+### 4. Funciones del usuario normal
+
+Al iniciar sesión como usuario normal, el sistema muestra las siguientes opciones:
+
+- Préstamos y devoluciones
+- Reportes
+- Salir
+
+---
+
+### 5. Préstamos y devoluciones
+
+En esta sección el usuario puede:
+
+- Realizar préstamos ingresando el ID del préstamo y el ID del Power Bank.
+- Realizar devoluciones ingresando el ID del préstamo.
+
+Cuando un Power Bank es prestado, su estado cambia de:
+
+Disponible -> Prestado
+
+
+Cuando se realiza la devolución, el estado vuelve a:
+
+Prestado -> Disponible
+
+
+El sistema genera una multa automáticamente si la devolución se realiza luego se 2 horas del prestamo.
+<br>La multa se genera a partir de las 2 horas luego del prestamo, se suma un monto de 500 colones por cada hora adicional que se exceda del limite.
+
+---
+
+### 6. Reportes para usuarios
+
+El usuario normal puede:
+
+- Ver los Power Banks registrados.
+- Consultar su historial de préstamos.
+
+---
+
+### 7. Acceso como administrador
+
+Para ingresar como administrador, se creó un usuario con rol `Admin` dentro del archivo `usuarios.json`:
+
+```plaintext
+[
+    {
+        "id_usuario": "1",
+        "nombre": "Administrador",
+        "correo": "admin@ucr.ac.cr",
+        "telefono": "88888888",
+        "password": "1234",
+        "rol": "Admin"
+    }
+]
+```
+
+---
+
+### 8. Funciones del administrador
+
+Al iniciar sesión como administrador, se habilitan funciones adicionales:
+
+- Registrar Power Banks.
+- Eliminar Power Banks.
+- Eliminar usuarios.
+- Ver reportes generales.
+- Consultar todos los usuarios registrados.
+- Consultar todas las Power Banks registradas con su respectivo estado.
+- Consultar todos los préstamos realizados.
+
+---
+
+### 9. Restricciones del sistema
+
+Un Power Bank únicamente puede eliminarse si se encuentra en estado:
+
+Disponible
+
+
+Si el Power Bank se encuentra en estado:
+
+Prestado
+
+
+no podrá eliminarse hasta que sea devuelto.
+
+---
+
+### 10. Reinicio de datos
+
+Para limpiar los datos almacenados del sistema, los archivos JSON pueden dejarse con listas vacías.
+
+Ejemplo:
+[]
