@@ -1,0 +1,44 @@
+[
+    {
+        "id_prestamo": "2",
+        "usuario": {
+            "id_usuario": "0",
+            "nombre": "0",
+            "correo": "0",
+            "telefono": "0",
+            "password": "0"
+        },
+        "powerbank": {
+            "id_powerbank": "2",
+            "marca": "2",
+            "capacidad": "2000",
+            "estado": "Disponible"
+        },
+        "fecha_prestamo": "2026-05-17 23:08:43",
+        "fecha_devolucion": "2026-05-17 23:08:56",
+        "horas_limite": 2,
+        "multa": 0,
+        "estado": "Devuelto"
+    },
+    {
+        "id_prestamo": "6",
+        "usuario": {
+            "id_usuario": "0",
+            "nombre": "0",
+            "correo": "0",
+            "telefono": "0",
+            "password": "0"
+        },
+        "powerbank": {
+            "id_powerbank": "6",
+            "marca": "6",
+            "capacidad": "6",
+            "estado": "Disponible"
+        },
+        "fecha_prestamo": "2026-05-17 23:20:49",
+        "fecha_devolucion": null,
+        "horas_limite": 2,
+        "multa": 0,
+        "estado": "Activo"
+    }
+]

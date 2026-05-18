@@ -1,0 +1,32 @@
+[
+    {
+        "id_powerbank": "1",
+        "marca": "1",
+        "capacidad": "1",
+        "estado": "1"
+    },
+    {
+        "id_powerbank": "1",
+        "marca": "1",
+        "capacidad": "1",
+        "estado": "1"
+    },
+    {
+        "id_powerbank": "1",
+        "marca": "1",
+        "capacidad": "1",
+        "estado": "1"
+    },
+    {
+        "id_powerbank": "5",
+        "marca": "5",
+        "capacidad": "5",
+        "estado": "Disponible"
+    },
+    {
+        "id_powerbank": "6",
+        "marca": "6",
+        "capacidad": "6",
+        "estado": "Prestado"
+    }
+]

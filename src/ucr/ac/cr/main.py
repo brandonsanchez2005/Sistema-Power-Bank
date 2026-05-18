@@ -1,7 +1,17 @@
-from src.ucr.ac.cr.repository.usuario_repository import UsuarioRepository
+import tkinter as tk
 
-repo = UsuarioRepository()
+from src.ucr.ac.cr.controller.sistema_controller import SistemaController
+from src.ucr.ac.cr.view.ventana_login import VentanaLogin
 
-datos = repo.cargar_datos()
 
-print(datos)
+def main():
+    root = tk.Tk()
+
+    controller = SistemaController()
+    VentanaLogin(root, controller)
+
+    root.mainloop()
+
+
+if __name__ == "__main__":
+    main()

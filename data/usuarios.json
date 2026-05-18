@@ -1,0 +1,16 @@
+[
+    {
+        "id_usuario": "11",
+        "nombre": "1",
+        "correo": "1",
+        "telefono": "1",
+        "password": "1"
+    },
+    {
+        "id_usuario": "0",
+        "nombre": "0",
+        "correo": "0",
+        "telefono": "0",
+        "password": "0"
+    }
+]
