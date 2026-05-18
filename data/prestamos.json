@@ -1,44 +1,68 @@
 [
     {
-        "id_prestamo": "2",
+        "id_prestamo": "002",
         "usuario": {
-            "id_usuario": "0",
-            "nombre": "0",
-            "correo": "0",
-            "telefono": "0",
-            "password": "0"
+            "id_usuario": "2",
+            "nombre": "carlos",
+            "correo": "carlos@ucr.ac.cr",
+            "telefono": "1111",
+            "password": "12345",
+            "rol": "Usuario"
         },
         "powerbank": {
-            "id_powerbank": "2",
-            "marca": "2",
-            "capacidad": "2000",
+            "id_powerbank": "123",
+            "marca": "samsumg",
+            "capacidad": "4900",
             "estado": "Disponible"
         },
-        "fecha_prestamo": "2026-05-17 23:08:43",
-        "fecha_devolucion": "2026-05-17 23:08:56",
+        "fecha_prestamo": "2026-05-18 01:27:45",
+        "fecha_devolucion": "2026-05-18 01:29:06",
         "horas_limite": 2,
         "multa": 0,
         "estado": "Devuelto"
     },
     {
-        "id_prestamo": "6",
+        "id_prestamo": "12345",
         "usuario": {
-            "id_usuario": "0",
-            "nombre": "0",
-            "correo": "0",
-            "telefono": "0",
-            "password": "0"
+            "id_usuario": "2",
+            "nombre": "carlos",
+            "correo": "carlos@ucr.ac.cr",
+            "telefono": "1111",
+            "password": "12345",
+            "rol": "Usuario"
         },
         "powerbank": {
-            "id_powerbank": "6",
-            "marca": "6",
-            "capacidad": "6",
+            "id_powerbank": "100",
+            "marca": "xiomi",
+            "capacidad": "50000",
             "estado": "Disponible"
         },
-        "fecha_prestamo": "2026-05-17 23:20:49",
-        "fecha_devolucion": null,
+        "fecha_prestamo": "2026-05-18 02:02:06",
+        "fecha_devolucion": "2026-05-19 02:07:51",
+        "horas_limite": 2,
+        "multa": 11000,
+        "estado": "Devuelto"
+    },
+    {
+        "id_prestamo": "7",
+        "usuario": {
+            "id_usuario": "987",
+            "nombre": "brandon",
+            "correo": "brandon@ucr.ac.cr",
+            "telefono": "12345",
+            "password": "12345",
+            "rol": "Usuario"
+        },
+        "powerbank": {
+            "id_powerbank": "100",
+            "marca": "xiomi",
+            "capacidad": "50000",
+            "estado": "Disponible"
+        },
+        "fecha_prestamo": "2026-05-19 02:11:14",
+        "fecha_devolucion": "2026-05-18 02:39:10",
         "horas_limite": 2,
         "multa": 0,
-        "estado": "Activo"
+        "estado": "Devuelto"
     }
 ]

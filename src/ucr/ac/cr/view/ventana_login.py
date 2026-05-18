@@ -1,8 +1,8 @@
 import tkinter as tk
 from tkinter import messagebox
 
-from view.ventana_principal import VentanaPrincipal
-from view.ventana_usuario import VentanaUsuario
+from src.ucr.ac.cr.view.ventana_principal import VentanaPrincipal
+from src.ucr.ac.cr.view.ventana_usuario import VentanaUsuario
 
 
 class VentanaLogin:

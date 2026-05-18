@@ -1,16 +1,26 @@
 [
     {
-        "id_usuario": "11",
-        "nombre": "1",
-        "correo": "1",
-        "telefono": "1",
-        "password": "1"
+        "id_usuario": "1",
+        "nombre": "Administrador",
+        "correo": "admin@ucr.ac.cr",
+        "telefono": "88888888",
+        "password": "1234",
+        "rol": "Admin"
     },
     {
-        "id_usuario": "0",
-        "nombre": "0",
-        "correo": "0",
-        "telefono": "0",
-        "password": "0"
+        "id_usuario": "2",
+        "nombre": "carlos",
+        "correo": "carlos@ucr.ac.cr",
+        "telefono": "1111",
+        "password": "12345",
+        "rol": "Usuario"
+    },
+    {
+        "id_usuario": "987",
+        "nombre": "brandon",
+        "correo": "brandon@ucr.ac.cr",
+        "telefono": "12345",
+        "password": "12345",
+        "rol": "Usuario"
     }
 ]

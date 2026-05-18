@@ -6,10 +6,11 @@ from src.ucr.ac.cr.model.usuario import Usuario
 
 class VentanaUsuario:
 
-    def __init__(self, root, controller, ventana_anterior=None):
+    def __init__(self, root, controller, ventana_anterior=None, es_admin=False):
         self.root = root
         self.controller = controller
         self.ventana_anterior = ventana_anterior
+        self.es_admin = es_admin
 
         self.construir_ventana()
 
@@ -30,35 +31,37 @@ class VentanaUsuario:
         self.entry_id = tk.Entry(self.root)
         self.entry_id.pack()
 
-        tk.Label(self.root, text="Nombre").pack()
-        self.entry_nombre = tk.Entry(self.root)
-        self.entry_nombre.pack()
+        if not self.es_admin:
+            tk.Label(self.root, text="Nombre").pack()
+            self.entry_nombre = tk.Entry(self.root)
+            self.entry_nombre.pack()
 
-        tk.Label(self.root, text="Correo").pack()
-        self.entry_correo = tk.Entry(self.root)
-        self.entry_correo.pack()
+            tk.Label(self.root, text="Correo").pack()
+            self.entry_correo = tk.Entry(self.root)
+            self.entry_correo.pack()
 
-        tk.Label(self.root, text="Teléfono").pack()
-        self.entry_telefono = tk.Entry(self.root)
-        self.entry_telefono.pack()
+            tk.Label(self.root, text="Teléfono").pack()
+            self.entry_telefono = tk.Entry(self.root)
+            self.entry_telefono.pack()
 
-        tk.Label(self.root, text="Password").pack()
-        self.entry_password = tk.Entry(self.root, show="*")
-        self.entry_password.pack()
+            tk.Label(self.root, text="Password").pack()
+            self.entry_password = tk.Entry(self.root, show="*")
+            self.entry_password.pack()
 
-        tk.Button(
-            self.root,
-            text="Registrar Usuario",
-            width=25,
-            command=self.registrar_usuario
-        ).pack(pady=10)
+            tk.Button(
+                self.root,
+                text="Registrar Usuario",
+                width=25,
+                command=self.registrar_usuario
+            ).pack(pady=10)
 
-        tk.Button(
-            self.root,
-            text="Eliminar Usuario",
-            width=25,
-            command=self.eliminar_usuario
-        ).pack(pady=5)
+        if self.es_admin:
+            tk.Button(
+                self.root,
+                text="Eliminar Usuario",
+                width=25,
+                command=self.eliminar_usuario
+            ).pack(pady=10)
 
         tk.Button(
             self.root,
@@ -85,13 +88,11 @@ class VentanaUsuario:
             messagebox.showerror("Error", respuesta)
 
     def eliminar_usuario(self):
-        respuesta = self.controller.eliminar_usuario(
-            self.entry_id.get()
-        )
+        respuesta = self.controller.eliminar_usuario(self.entry_id.get())
 
         if "correctamente" in respuesta:
             messagebox.showinfo("Éxito", respuesta)
-            self.limpiar_campos()
+            self.entry_id.delete(0, tk.END)
         else:
             messagebox.showerror("Error", respuesta)
 

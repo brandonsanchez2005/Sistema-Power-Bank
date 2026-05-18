@@ -107,3 +107,6 @@ class PrestamoService:
                 powerbank["estado"] = nuevo_estado
 
         self.powerbank_service.powerbank_repository.guardar_datos(powerbanks)
+
+    def listar_prestamos(self):
+        return self.prestamo_repository.obtener_prestamos()

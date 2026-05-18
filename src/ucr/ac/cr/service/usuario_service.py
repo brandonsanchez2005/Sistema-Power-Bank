@@ -36,6 +36,9 @@ class UsuarioService:
 
         for usuario in usuarios:
             if usuario["correo"] == correo and usuario["password"] == password:
+                if "rol" not in usuario:
+                    usuario["rol"] = "Usuario"
+
                 return usuario
 
         return None
@@ -46,7 +49,8 @@ class UsuarioService:
         if usuario is None:
             return "Usuario no encontrado"
 
+        if usuario.get("rol") == "Admin":
+            return "No se puede eliminar un administrador"
+
         self.usuario_repository.eliminar_usuario(id_usuario)
-
         return "Usuario eliminado correctamente"
-

@@ -1,8 +1,8 @@
 import tkinter as tk
 
-from view.ventana_powerbank import VentanaPowerBank
-from view.ventana_prestamo import VentanaPrestamo
-from view.ventana_reportes import VentanaReportes
+from src.ucr.ac.cr.view.ventana_prestamo import VentanaPrestamo
+from src.ucr.ac.cr.view.ventana_reportes import VentanaReportes
+from src.ucr.ac.cr.view.ventana_admin import VentanaAdmin
 
 
 class VentanaPrincipal:
@@ -30,21 +30,20 @@ class VentanaPrincipal:
         tk.Label(
             self.root,
             text=f"Usuario: {self.usuario['nombre']}"
+        ).pack()
+
+        tk.Label(
+            self.root,
+            text=f"Rol: {self.usuario.get('rol', 'Usuario')}"
         ).pack(pady=5)
 
-        tk.Button(
-            self.root,
-            text="Préstamos y Devoluciones",
-            width=30,
-            command=self.abrir_prestamos
-        ).pack(pady=10)
-
-        tk.Button(
-            self.root,
-            text="Registrar Power Bank",
-            width=30,
-            command=self.abrir_powerbanks
-        ).pack(pady=10)
+        if self.usuario.get("rol") != "Admin":
+            tk.Button(
+                self.root,
+                text="Préstamos y Devoluciones",
+                width=30,
+                command=self.abrir_prestamos
+            ).pack(pady=10)
 
         tk.Button(
             self.root,
@@ -52,6 +51,14 @@ class VentanaPrincipal:
             width=30,
             command=self.abrir_reportes
         ).pack(pady=10)
+
+        if self.usuario.get("rol") == "Admin":
+            tk.Button(
+                self.root,
+                text="Administración",
+                width=30,
+                command=self.abrir_admin
+            ).pack(pady=10)
 
         tk.Button(
             self.root,
@@ -63,8 +70,8 @@ class VentanaPrincipal:
     def abrir_prestamos(self):
         VentanaPrestamo(self.root, self.controller, self.usuario, self)
 
-    def abrir_powerbanks(self):
-        VentanaPowerBank(self.root, self.controller, self)
-
     def abrir_reportes(self):
-        VentanaReportes(self.root, self.controller, self)
+        VentanaReportes(self.root, self.controller, self.usuario, self)
+
+    def abrir_admin(self):
+        VentanaAdmin(self.root, self.controller, self.usuario, self)
